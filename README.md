@@ -1,6 +1,6 @@
 # First Js Project
 
-I wrote this code through Visual Studio and ran it by using Live Server extension in Visual Studio
+I wrote this code through Visual Studio by using Vue framework. To start the project, I have opened the project in Visual Studio Code, opened the terminal there and wrote this command: "npm run serve".
 
 
 # How To Work With it
@@ -21,7 +21,7 @@ Order ID will be used in the future. I am currently working on creating a printi
 
 # Update : 16.06.2022
 
-Generally, there are not that much changes in this update. The only change that was made is making it work with Vue framework and there is a lot of work which still has to be done. The Vue version of this project is in "glass-bending.zip" archive. To start the project, I have opened the project in Visual Studio Code, opened the terminal there and wrote this command: "npm run serve".
+Generally, there are not that much changes in this update. The only change that was made is making it work with Vue framework and there is a lot of work which still has to be done.
 
 # Upcoming updates:
 1) Optimizing openTables() method, since it is highly unefficient and so far is accessible only by pressing "Press Me!" button. I will emit the openTables() method to the App.vue component and trigger it as the id value changes.
