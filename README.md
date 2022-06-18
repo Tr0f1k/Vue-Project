@@ -40,9 +40,30 @@ Order ID will be used in the future. I am currently working on creating a printi
 
 Generally, there are not that much changes in this update. The only change that was made is making it work with Vue framework and there is a lot of work which still has to be done. The Vue version of this project is in "glass-bending.zip" archive. To start the project, I have opened the project in Visual Studio Code, opened the terminal there and wrote this command: "npm run serve".
 
-# Upcoming updates:
-1) Optimizing openTables() method, since it is highly unefficient and so far is accessible only by pressing "Press Me!" button. I will emit the openTables() method to the App.vue component and trigger it as the id value changes.
-2) Working with styles of certain components, especially input and result tables.
-3) Create a template for printing the outputs of the calculations (that is what the Order ID field was originally created for).
-4) Create another calculator and add it to the website. The way I see it is that on the home page the user will be able to choose between two calculators: the one that I have already created and the one that I will create. I'm still thinking whether I should make all of it on the same page or should I create different pages for each calculator.
-5) Break up the code in smaller pieces and put it in separate components. In this version, I have only two components. I plan on using more components that I have currently used
+# Known Issues:
+
+1) openTables() method is not optimized. It is highly unefficient and so far is accessible only by pressing "Press Me!" button.
+2) Very small amount of components. I have to break up the code in smaller pieces and put it in separate components so that the program becomes more efficient
+
+# Plans for upcoming updates:
+1) Restyling of certain components, especially input and result tables.
+2) Creating a template for printing the outputs of the calculations (that is what the Order ID field was originally created for).
+3) Creating another calculator and adding it to the website. The way I see it is that on the home page the user will be able to choose between two calculators: the one that I have already created and the one that I will create. I'm still thinking whether I should make all of it on the same page or should I create different pages for each calculator.
+
+# Update : 17.06.2022
+
+I was working on resolving two issues from my previous version of a program and a minor update.  
+
+# Updates:
+1) Moving HTML (header, dropdown list, etc.) from App.vue to InputTables.vue. I did it so that when I will add a new calculator I can import it in the same component as glass bending calculator. 
+
+# Resolved issues:
+1) Very small amount of components: I have put each calculation option in its own component and I am conditionally rendering the components based on the chosen option.
+2) Optimizing openTables() method: After beaking up the code on smaller components, there was no more necessity in using the openTables() method. It was used to show and hide the calculation tables. Now, since all the components are getting rendered conditionally, there is no need to hide or show anything. Because of that, I have just deleted this method.
+
+# Known Issues:
+1) Components related to calculation are not efficient. Each of them (except for the Default component) have similar parts.
+
+# Plans for upcoming updates:
+1) Making separate component for pieces of code shared within calculation components
+2) Everything that has not been done from the previous plan
