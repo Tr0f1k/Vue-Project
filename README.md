@@ -52,17 +52,15 @@ Generally, there are not that much changes in this update. The only change that 
 
 # Update : 17.06.2022
 
-I was working on resolving two issues from my previous version of a program and a minor update.  
-
-# Updates:
-1) Moving HTML (header, dropdown list, etc.) from App.vue to InputTables.vue. I did it so that when I will add a new calculator I can import it in the same component as glass bending calculator. 
+I was working on resolving two issues from my previous version of a program and did some minor updates.  
 
 # Resolved issues:
 1) Very small amount of components: I have put each calculation option in its own component and I am conditionally rendering the components based on the chosen option.
 2) Optimizing openTables() method: After beaking up the code on smaller components, there was no more necessity in using the openTables() method. It was used to show and hide the calculation tables. Now, since all the components are getting rendered conditionally, there is no need to hide or show anything. Because of that, I have just deleted this method.
 
-# Known Issues:
-1) Components related to calculation are not efficient. Each of them (except for the Default component) have similar parts.
+# Updates:
+1) Moving HTML (header, dropdown list, etc.) from App.vue to InputTables.vue. I did it so that when I will add a new calculator I can import it in the same component as glass bending calculator.
+2) Each calculation component had two shared pieces of code. I have made separate components for each of those pieces for higher efficiency.
 
 # Plans for upcoming updates:
 1) Making separate component for pieces of code shared within calculation components

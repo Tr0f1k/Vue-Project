@@ -1,5 +1,5 @@
 <template>
-   <header style="background: #bee0c5; text-align: center; font-size: 20px">Glass Bending Calculator!</header>
+   <h1 style="background: #bee0c5; text-align: center; font-size: 20px;">Glass Bending Calculator!</h1>
         <h1 style="padding-top: 0.01%"></h1>
         <table align="center" width="50%" style="background: #bee0c5; table-layout: fixed; text-align: center">
             <tr>
@@ -36,12 +36,12 @@
 </template>
 
 <script>
-import Default from './input tables/Default.vue';
-import SAndRise from './input tables/SAndRise.vue';
-import SAndRad from './input tables/SAndRad.vue';
-import RadAndRise from './input tables/RadAndRise.vue';
-import RadAndG from './input tables/RadAndG.vue';
-import RadAndA from './input tables/RadAndA.vue';
+import Default from './result tables/Default.vue';
+import SAndRise from './result tables/SAndRise.vue';
+import SAndRad from './result tables/SAndRad.vue';
+import RadAndRise from './result tables/RadAndRise.vue';
+import RadAndG from './result tables/RadAndG.vue';
+import RadAndA from './result tables/RadAndA.vue';
 import { nextTick } from 'vue';
 export default {
     name:'InputTables',
