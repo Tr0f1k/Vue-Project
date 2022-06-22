@@ -1,10 +1,10 @@
 <template>
-            <table style="width: 9.8%; background: #bee0c5; position: absolute; top:46%; left: 36%; table-layout: fixed;">
+            <table class="resultTable">
                 <tr>
                     <td>
                         {{firstName}}
                     </td>
-                    <td id="5s" style="size: 25%">
+                    <td class="cell">
                         {{firstValue}} {{firstMeasure}}
                     </td>
                 </tr>
@@ -12,7 +12,7 @@
                     <td>
                         {{secondName}}
                     </td>
-                    <td id="5rise" style="size: 25%">
+                    <td class="cell">
                         {{secondValue}} {{secondMeasure}}
                     </td>
                 </tr>
@@ -20,12 +20,12 @@
                     <td>
                         {{thirdName}}
                     </td>
-                    <td id="5g" style="size: 25%">
+                    <td class="cell">
                         {{thirdValue}} {{thirdMeasure}}
                     </td>
                 </tr>
         </table>
-            <table style="width: 10%; background: #bee0c5; position: absolute; top: 70%; left: 55%">
+            <table class="areaWeight">
                 <tr>
                     <td>
                         Area:
@@ -63,3 +63,26 @@
         }
     }
 </script>
+
+<style scoped>
+.resultTable {
+    width: 9.8%;
+    background: #bee0c5;
+    position: absolute;
+    top:46%;
+    left: 36%;
+    table-layout: fixed
+}
+
+.areaWeight {
+    width: 10%;
+    background: #bee0c5;
+    position: absolute;
+    top: 70%;
+    left: 55%
+}
+
+.cell {
+    size: 25%
+}
+</style>

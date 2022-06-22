@@ -1,11 +1,11 @@
 <template>
-<table id="table3" style="width: 5%; background: #bee0c5; position: absolute; left: 36%; top: 35%">
+<table>
             <tr>
                 <td>
                     Height:
                 </td>
                 <td>
-                    <input id="height3" size="1">
+                    <input id="height4" size="1">
                 </td>
                 <td>
                     mm
@@ -16,7 +16,7 @@
                     Thickness:
                 </td>
                 <td>
-                    <input id="thickness3" size="1">
+                    <input id="thickness4" size="1">
                 </td>
                 <td>
                     mm
@@ -27,7 +27,7 @@
                     Radius:
                 </td>
                 <td>
-                    <input id="5" size="1">
+                    <input id="7" size="1">
                 </td>
                 <td>
                     mm
@@ -35,10 +35,10 @@
             </tr>
             <tr>
                 <td>
-                    Rise:
+                    Girth:
                 </td>
                 <td>
-                    <input id="6" size="1">
+                    <input id="8" size="1">
                 </td>
                 <td>
                     mm
@@ -46,20 +46,20 @@
             </tr>
             <tr>
                 <td>
-                    <button id="button3" @click="radiusrise()">Calculate!</button>
+                    <button id="button4" @click="radiusgirth()">Calculate!</button>
                 </td>
             </tr>
         </table>
             <ResultTables
             v-if="but == false"
             :firstName="firstName"
-            :firstValue="s"
+            :firstValue="a"
             :firstMeasure="firstMeasure"
             :secondName="secondName"
-            :secondValue="a"
+            :secondValue="s"
             :secondMeasure="secondMeasure"
             :thirdName="thirdName"
-            :thirdValue="g"
+            :thirdValue="rise"
             :thirdMeasure="thirdMeasure"
             :areaValue="ar"
             :weightValue="m"
@@ -80,11 +80,11 @@ export default {
     },
     data() {
         return {
-            firstName: 'Span:',
-            firstMeasure: 'mm',
-            secondName: 'Angle:',
-            secondMeasure: '°',
-            thirdName: 'Girth:',
+            firstName: 'Angle:',
+            firstMeasure: '°',
+            secondName: 'Span:',
+            secondMeasure: 'mm',
+            thirdName: 'Rise:',
             thirdMeasure: 'mm',
             but: true,
             a: 0,
@@ -99,24 +99,34 @@ export default {
         }
     },
     methods: {
-        radiusrise(){
-                this.rad = document.getElementById("5").value;
-                this.rise = document.getElementById("6").value;
-                this.h = document.getElementById("height3").value;
-                this.t = document.getElementById("thickness3").value;
-                this.s = 2 * Math.sqrt(this.rise * (2 * this.rad - this.rise));
-                this.a = 2 * Math.asin(this.s / (2 * this.rad));
-                this.g = this.rad * this.a;
+        async radiusgirth(){
+                this.rad = document.getElementById("7").value;
+                this.g = document.getElementById("8").value;
+                this.h = document.getElementById("height4").value;
+                this.t = document.getElementById("thickness4").value;
+                this.a = this.g / this.rad;
+                this.s = 2 * this.rad * Math.sin(this.a / 2);
+                this.rise = this.rad - 0.5 * Math.sqrt(4 * this.rad * this.rad - this.s * this.s);
                 this.ar = (this.h/1000) * (this.g/1000);
                 this.m = this.ar * this.t * 2.5;
+                this.a = Math.round((this.a * 180)/Math.PI);
                 this.s = Math.round(this.s);
-                this.a = Math.round((this.a * 180)/Math.PI)
-                this.g = Math.round(this.g);
+                this.rise = Math.round(this.rise);
                 this.ar = this.ar.toFixed(2);
                 this.m = this.m.toFixed(2);
                 this.but = false;
-                document.getElementById('button3').style.visibility = "hidden"
+                document.getElementById('button4').style.visibility = "hidden"
             }
     }
 }
 </script>
+
+<style scoped>
+table {
+    width: 5%;
+    background: #bee0c5;
+    position: absolute;
+    left: 36%;
+    top: 35%
+}
+</style>

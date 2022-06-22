@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import InputTables from './components/Glass Bending/InputTables.vue';
-import First from './components/glass cutting/First.vue';
+import InputTables from './components/glassBending/InputTables.vue';
+import First from './components/glassCutting/First.vue';
 import { nextTick } from 'vue';
 export default {
   name: "App",
